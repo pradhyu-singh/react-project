@@ -4,11 +4,7 @@ React Project: State of the Art Web Development
 A dependency--not a boilerplate--to make your React project a delight to
 develop.
 
-This is brand new, not ready for production unless you are ready and
-willing to contribute to the project. Basically just building something
-we want here, if it interests you, please help :)
 
-Also, it has no tests. Also, it's kind of awesome.
 
 ## Node/NPM Versions
 
@@ -16,13 +12,9 @@ I'm running node v5.7.0 and npm v3.6.0 as I tinker, there's no plan to
 support older versions at the moment.
 
 
-
-
-
 ## Contributing
 
 Please see [CONTRIBUTING.md](/CONTRIBUTING.md)
-
 
 
 
@@ -106,110 +98,10 @@ to do that.
 
 ### Future Features (Pull Requests Welcome!)
 
-Please see [CONTRIBUTING.md](/CONTRIBUTING.md) and help out :)
-
-
-
-
-## Philosophy
-
-- Cut the crap and start building an app right away
-- Wrap up the stuff that is good for all apps.
-- Keep the app in charge. Config lives in the app, defaults provided by
-  the framework are imported into the app, the app is not imported into
-  the framework.
-- Escape hatches are important.
-- Upgrading should be simple, benefits should come w/o changing app
-  code usually.
-
-
-
-
-## Semver Versioning
-
-As soon as I ship a real app with this, I'll ship 1.0.
-
-
-
-
-## API
-
+Please see [CONTRIBUTING.md](/CONTRIBUTING.md) and help out 
 ### npm scripts
 
 After running `react-project init` your package.json will have some new tasks.
-
-#### `npm start`
-
-Starts the server. It's smart enough to know which `NODE_ENV` you're in.
-If `NODE_ENV=production` you'll get the full production build. If you're
-shipping to heroku, for instance, deploying is just `git push heroku master`.
-It'll create a production build up there.
-
-#### `npm test`
-
-Runs any files named `modules/**/*.test.js` with karma and mocha.
-
-**Implementation needs work**
-
-<a name="test-runner"></a>
-Desired API is:
-
-- App doesn't need `tests.webpack.js` context junk.
-- App only has a karma config and a webpack tests config
-- Karma config:
-  - configurable on package.json `react-project`, like `"karma": "karma.conf.js"`
-  - blueprint default is `export { KarmaConfig } from 'react-project/test'`
-- Webpack test config
-  - one more export from `webpack.config.js`
-- Both configs should be babel'd.
-
-This way people can mess w/ the default configs (both webpack and karma)
-or take full control.
-
-
-### ENV vars
-
-React Project will use environment variables to know how to build for
-production v. development.  For local development, you can edit the
-`.env` file to change environment variables, in production you'll want
-to set them on the box.
-
-#### Typical Production Environment variables
-
-```
-NODE_ENV=production
-PORT=80
-PUBLIC_PATH=/ # or a cdn you push your assets to
-SERVER_RENDERING=on
-```
-
-When `npm start` is called on a machine with those environment
-variables, your app will be optimized with things like gzip compression.
-
-#### Development environment variables
-
-```
-# the host webpack assets are served from
-DEV_HOST=localhost
-
-# the port webpack assets are served from
-DEV_PORT=8081
-
-# reload the browser on app changes
-AUTO_RELOAD=refresh
-
-# "hot" reload changed modules only (no page reload), careful, this
-# thing can be finicky
-AUTO_RELOAD=hot
-
-# don't reload anything on code changes
-AUTO_RELOAD=none
-```
-
-
-### `react-project`
-
-```
 import { lazy, ServerRoute } from 'react-project'
 ```
 
